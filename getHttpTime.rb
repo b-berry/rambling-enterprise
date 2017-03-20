@@ -15,8 +15,9 @@ class Optparse
         # Parse Options
         options = OpenStruct.new
         options.encoding = "utf8"
-        options.url = 'https://gitlab.com'
         options.dur = 5 * 60
+        options.int = 5
+        options.url = 'https://gitlab.com'
 
         opts = OptionParser.new do |opts|
             # Set Defaults here
@@ -24,16 +25,21 @@ class Optparse
             opts.separator ""
             opts.separator "Specific options:"
 
+            opts.on("-d", "--duration FLOAT", Float,
+                "Specify test duration          default: #{options.dur}s") do |dur|
+                options.dur = dur.to_f
+            end
+
+            opts.on("-i", "--interval FLOAT", Float,
+                "Specify interval duration      default: #{options.int}s") do |int|
+                options.int = int.to_f
+            end
+            
             opts.on("-u", "--url URL", 
-                "Specify Host URL       default: #{options.url}") do |url|
+                "Specify Host URL               default: #{options.url}") do |url|
                 options.url = url
             end
             
-            opts.on("-d", "--duration",
-                "Specify test duration  default: #{options.dur}s") do |dur|
-                options.dur = dur
-            end
-
             opts.on_tail("-h", "--help", "Prints this help") do
                 STDOUT.puts opts
                 exit
@@ -49,17 +55,13 @@ end
 def httpGet(uri)
 
     http = Net::HTTP.new(uri.host, uri.port)
-    if uri.scheme = 'https'
-        #http.use_ssl = true
-        #http.ssl_version = :SSLv3
+    if uri.scheme == 'https'
+        http.use_ssl = true
+        http.ssl_version = :SSLv3
     end
 
-    #Net::HTTP.start(uri.host, uri.port).start do |http|
-
-        request = Net::HTTP::Get.new(uri.request_uri)
-        response = http.request(request)
-
-    #end
+    request = Net::HTTP::Get.new(uri.request_uri)
+    response = http.request(request)
 
     return response 
 
@@ -70,12 +72,10 @@ def runTest(options, uri)
 
     # Run Benchmark over GET request
     time = Benchmark.measure do
-
         $response = httpGet(uri)
-
     end    
 
-    return $response
+    return $response, time
 
 end
 
@@ -83,8 +83,6 @@ end
 def uriTest(url)
 
     uri = URI.parse(url)
-    # debug
-    puts uri.scheme
 
     # Test proper scheme
     if uri.scheme.nil? 
@@ -100,19 +98,46 @@ STDOUT.puts options
 
 uri = uriTest(options.url)
 
-# debug
-puts uri.scheme
+# Print activity
+puts "Running HTTP::Get response test for: #{options.dur}sec Every:#{options.int}sec"
+puts "Request RealTime(s): Response message"
 
-response = runTest(options, uri)
+report = []
+start_time = Time.now
+while options.dur > Time.now - start_time
 
-case response
-when Net::HTTPSuccess
-  puts response.message
-when Net::HTTPMovedPermanently
-  puts response.message
-when Net::HTTPRedirect
-  #follow_redirect(response)
-else
-  binding.pry
-  raise StandardError, "ERROR: #{response.message}"
+    # Run Test over uri
+    response = runTest(options, uri)
+
+    case response[0]
+    when Net::HTTPSuccess
+        status = response[0].message
+    when Net::HTTPMovedPermanently
+        status = response[0].message
+    when Net::HTTPRedirect
+        status = response[0].message
+        #follow_redirect(response)
+    else
+        status = "ERROR: #{response.message}"
+        #raise StandardError, "ERROR: #{response.message}"
+    end
+
+    #binding.pry
+    report_i = [ response[1].real, status ]
+    puts report_i.join(': ')
+
+    report << report_i
+
+    # Wait for interval conifg
+    sleep(options.int)
+
 end
+
+# Calculate total time
+time = 0
+report.each do |i|
+    time += i[0].real
+end
+
+printf "Total time:"
+puts time
