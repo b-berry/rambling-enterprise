@@ -100,7 +100,7 @@ uri = uriTest(options.url)
 
 # Print activity
 puts "Running HTTP::Get response test for: #{options.dur}sec Every:#{options.int}sec"
-puts "Request RealTime(s): Response message"
+puts "Request Time(s): Response message"
 
 report = []
 start_time = Time.now
@@ -123,7 +123,7 @@ while options.dur > Time.now - start_time
     end
 
     #binding.pry
-    report_i = [ response[1].real, status ]
+    report_i = [ response[1].real.round(13), status ]
     puts report_i.join(': ')
 
     report << report_i
