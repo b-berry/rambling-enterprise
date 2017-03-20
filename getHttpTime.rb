@@ -6,7 +6,7 @@ require 'optparse'
 require 'ostruct'
 require 'pry'
 
-Host = 'https://gitlab.com'
+Host = 'https://google.com'
 
 class Optparse
 
@@ -17,7 +17,7 @@ class Optparse
         options.encoding = "utf8"
         options.dur = 5 * 60
         options.int = 5
-        options.url = 'https://gitlab.com'
+        options.url = 'https://google.com'
 
         opts = OptionParser.new do |opts|
             # Set Defaults here

@@ -18,7 +18,7 @@ What do you do once the issue is solved?
 
 ### Question 4
 
-Can you write a small Ruby based script/app that will get HTTP response times over 5 minutes from your location to https://gitlab.com?
+Can you write a small Ruby based script/app that will get HTTP response times over 5 minutes from your location to https://google.com?
 
 ### Other questions related to your candidacy
 
