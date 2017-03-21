@@ -17,7 +17,7 @@ class Optparse
         options.encoding = "utf8"
         options.dur = 5 * 60
         options.int = 5
-        options.url = 'https://google.com'
+        options.url = Host 
 
         opts = OptionParser.new do |opts|
             # Set Defaults here
@@ -131,12 +131,16 @@ STDOUT.puts options
 uri = uriTest(options.url)
 
 # Print activity
-puts "Running HTTP::Get response test for: #{options.dur}sec Every:#{options.int}sec"
+msg = [ sprintf("%37s", "Running HTTP::Get response test for"),
+        sprintf("%33s", "Duration:#{options.dur}s Every:#{options.int}s")
+      ]
+puts msg.join(' - ')
+
 header = [  sprintf("%3s", "#"),
             sprintf("%25s", "Time"),
             sprintf("%3s", "###"),
             sprintf("%17s", "Response message"),
-            sprintf("%15s", "Request Time(s)")
+            sprintf("%13s", "Request Time")
          ]
 puts header.join(' - ')
 
@@ -172,7 +176,7 @@ end
 # Calculate total time
 time = calcResults(report)
 
-header = [ sprintf("%41s",""), sprintf("%13s", "Total time(s)"), sprintf("%13s", "Average Time(s)")]
+header = [ sprintf("%41s",""), sprintf("%13s", "Total time"), sprintf("%13s", "Average Time")]
 results = [ sprintf("%41s",""), sprintf("%13.11f", time.to_f), sprintf("%13.11f", time.to_f / report.length)]
 puts header.join(' - ')
 puts results.join(' - ')
