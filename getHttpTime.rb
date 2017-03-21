@@ -100,43 +100,58 @@ uri = uriTest(options.url)
 
 # Print activity
 puts "Running HTTP::Get response test for: #{options.dur}sec Every:#{options.int}sec"
-puts "Request Time(s): Response message"
+header = [  sprintf("%3s", "#"),
+            sprintf("%25s", "Time"),
+            sprintf("%3s", "###"),
+            sprintf("%17s", "Response message"),
+            sprintf("%15s", "Request Time(s)")
+         ]
+puts header.join(' - ')
 
 report = []
+index = 0
 start_time = Time.now
 while options.dur > Time.now - start_time
 
     # Run Test over uri
     response = runTest(options, uri)
 
-    case response[0]
-    when Net::HTTPSuccess
-        status = response[0].message
-    when Net::HTTPMovedPermanently
-        status = response[0].message
-    when Net::HTTPRedirect
-        status = response[0].message
-        #follow_redirect(response)
-    else
-        status = "ERROR: #{response.message}"
-        #raise StandardError, "ERROR: #{response.message}"
-    end
+    #case response[0]
+    #when Net::HTTPSuccess
+    #    status = response[0].message
+    #when Net::HTTPMovedPermanently
+    #    status = response[0].message
+    #when Net::HTTPRedirect
+    #    status = response[0].message
+    #    #follow_redirect(response)
+    #else
+    #    status = "ERROR: #{response.message}"
+    #    #raise StandardError, "ERROR: #{response.message}"
+    #end
 
-    #binding.pry
-    report_i = [ response[1].real.round(13), status ]
-    puts report_i.join(': ')
+    report_i  = [   
+                    sprintf("%3d", index + 1),
+                    sprintf("%24s",Time.now), 
+                    sprintf('%3d', response[0].code),
+                    sprintf("%17s", response[0].message),
+                    sprintf("%13.11f",response[1].real) 
+                ]
+
+    puts report_i.join(' - ')
 
     report << report_i
 
     # Wait for interval conifg
     sleep(options.int)
 
+    index += 1
+
 end
 
 # Calculate total time
 time = 0
 report.each do |i|
-    time += i[0].real
+    time += i.last.to_f
 end
 
 printf "Total time:"
