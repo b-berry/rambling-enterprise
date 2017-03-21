@@ -52,6 +52,18 @@ class Optparse
 
 end
 
+
+def calcResults(report)
+
+    time = 0
+    report.each do |i|
+        time += i.last.to_f
+    end
+
+    return time
+
+end
+
 def httpGet(uri)
 
     http = Net::HTTP.new(uri.host, uri.port)
@@ -64,6 +76,26 @@ def httpGet(uri)
     response = http.request(request)
 
     return response 
+
+end
+
+
+def resultTest(response)
+
+    case response[0]
+    when Net::HTTPSuccess
+        status = response[0].message
+    when Net::HTTPMovedPermanently
+        status = response[0].message
+    when Net::HTTPRedirect
+        status = response[0].message
+        #follow_redirect(response)
+    else
+        status = "ERROR: #{response.message}"
+        #raise StandardError, "ERROR: #{response.message}"
+    end
+
+    return status
 
 end
 
@@ -115,19 +147,8 @@ while options.dur > Time.now - start_time
 
     # Run Test over uri
     response = runTest(options, uri)
-
-    #case response[0]
-    #when Net::HTTPSuccess
-    #    status = response[0].message
-    #when Net::HTTPMovedPermanently
-    #    status = response[0].message
-    #when Net::HTTPRedirect
-    #    status = response[0].message
-    #    #follow_redirect(response)
-    #else
-    #    status = "ERROR: #{response.message}"
-    #    #raise StandardError, "ERROR: #{response.message}"
-    #end
+    
+    # status = resultsTest(response)
 
     report_i  = [   
                     sprintf("%3d", index + 1),
@@ -149,10 +170,9 @@ while options.dur > Time.now - start_time
 end
 
 # Calculate total time
-time = 0
-report.each do |i|
-    time += i.last.to_f
-end
+time = calcResults(report)
 
-printf "Total time:"
-puts time
+header = [ sprintf("%41s",""), sprintf("%13s", "Total time(s)"), sprintf("%13s", "Average Time(s)")]
+results = [ sprintf("%41s",""), sprintf("%13.11f", time.to_f), sprintf("%13.11f", time.to_f / report.length)]
+puts header.join(' - ')
+puts results.join(' - ')
