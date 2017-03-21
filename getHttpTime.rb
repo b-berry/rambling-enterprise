@@ -6,7 +6,7 @@ require 'optparse'
 require 'ostruct'
 require 'pry'
 
-Host = 'https://google.com'
+Host = 'https://github.com'
 
 class Optparse
 
@@ -69,7 +69,6 @@ def httpGet(uri)
     http = Net::HTTP.new(uri.host, uri.port)
     if uri.scheme == 'https'
         http.use_ssl = true
-        http.ssl_version = :SSLv3
     end
 
     request = Net::HTTP::Get.new(uri.request_uri)
