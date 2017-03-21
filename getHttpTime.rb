@@ -175,7 +175,7 @@ end
 # Calculate total time
 time = calcResults(report)
 
-header = [ sprintf("%41s",""), sprintf("%13s", "Total time"), sprintf("%13s", "Average Time")]
-results = [ sprintf("%41s",""), sprintf("%13.11f", time.to_f), sprintf("%13.11f", time.to_f / report.length)]
+header = [ sprintf("%37s",""), sprintf("%17s", "Total time"), sprintf("%13s", "Average Time")]
+results = [ sprintf("%37s",""), sprintf("%17.11f", time.to_f), sprintf("%13.11f", time.to_f / report.length)]
 puts header.join(' - ')
 puts results.join(' - ')
