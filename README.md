@@ -10,12 +10,12 @@ You are assigned to handle this report. How would you clear this from your queue
 
 A user on a RHEL based machine runs `rpm -i packagename.rpm`. Describe what happens during the lifecycle of this command.
 
-> It has been a while since I have used a rpm based distribution, but I used to run Fedora (`yum`) on my laptop while an undergraduate student.  The `rpm` command is the package manager, and is run with the `-i` flag to install the specified packege (.rpm).  When exececuted, `rpm` will source the specfile for build, install and clean instructions with triggers for four sequences:
+> It has been a while since I have used a rpm based distribution, but I used to run Fedora (`yum`) on my laptop while an undergraduate student.  The `rpm` command is the package manager, and is run with the `-i` flag to install the specified packege (.rpm).  When executed, `rpm` will source the specfile for build, install and clean instructions with triggers for four sequences:
 >
 > 1. The `%pre` hook - preinstallation, looks for any package dependencies and mark them for installation and then copy build files to the buildroot for installation
 > 2. The `%post` hook - postinstallation, removes any buildroot files and older version candidates after package installation
 > 3. The `%preun`  hook - preuninstallation, remove files not overwritten by the installation and execute uninstallations of obsolete dependencies
-> 4. The `%postun` hook - postuninstallation, clean-up and maintenaince  post uninstall of old packages
+> 4. The `%postun` hook - postuninstallation, clean-up and maintenance  post uninstall of old packages
 
 ### Question 3
 
@@ -23,7 +23,7 @@ After shipping a new feature in the project, a large customer reports back that 
 
 How do you approach this situation and how do you rule out the issues you may find on the way to a resolution?
 
-> If this new feature is deployed by Chef, my first suspicion would be an enviroment revision incompatibility.  I would investigate what environment the customer's system is running.  Then, I would check the cookbook version bump this new feature created and confirm that this environment is configured to deploy that version.  If I find that the deployed environement is properly configured to use this new feature revision I would investigate `chef-client` logs to see if any deployment issues occured during the chef-run.  I should then be able to follow the stacktrace error to get more information about the failure.  I would then troubleshot any recipe issues on a development branch of the Chef repo.
+> If this new feature is deployed by Chef, my first suspicion would be an environment revision incompatibility.  I would investigate what environment the customer's system is running.  Then, I would check the cookbook version bump this new feature created and confirm that this environment is configured to deploy that version.  If I find that the deployed environment is properly configured to use this new feature revision I would investigate `chef-client` logs to see if any deployment issues occurred during the chef-run.  I should then be able to follow the stacktrace error to get more information about the failure.  I would then troubleshot any recipe issues on a development branch of the Chef repo.
 
 What do you do once the issue is solved?
 
@@ -82,7 +82,7 @@ $ ./getHttpTime.rb -d 300 -i 12 -u https://gitlab.com
 
 Do you have remote working experience?
 
-> I have been 100% remote for more than two years of my 5 years as a Linux Engineer and Content Developer for the Liquid Galaxy project for a small tech firm based out of New York, NY.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in dialy stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
+> I have been 100% remote for 2.5 of my 5 years as a Linux Engineer and Content Developer for the Liquid Galaxy project for a small tech firm based out of New York, NY.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in daily stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
 
 Can you describe your Chef experience?
 
@@ -90,6 +90,6 @@ Can you describe your Chef experience?
 
 Do you have an open source project that you own or contributed to that you feel particularly proud about?
 
-> As a content developer on the Liquid Galaxy project, I've contrubuted to a Ruby Gem created in-house to automate KML source content for our interactive plateform.  This library calculates the necessary geospatial relationships to create geosyncronous drawn polygons and/or flight dynamics intended for Google Earth and other geodatic virtual tours. 
+> As a content developer on the Liquid Galaxy project, I've contributed to a Ruby Gem created in-house to automate KML source content for our interactive platform.  This library calculates the necessary geospatial relationships to create geosynchronous content, typically drawn shape polygons and/or flight dynamics intended for Google Earth and other geodatic virtual tours. 
 >
 > [Kamelopard Ruby Gem](https://rubygems.org/gems/kamelopard/versions/0.0.16 "Ruby Gems Kamelopard Page")
