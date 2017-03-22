@@ -4,16 +4,18 @@ We receive an email about a security vulnerability in one of the libraries that 
 
 You are assigned to handle this report. How would you clear this from your queue?
 
+> If this vulnerability involves unauthorized port traffic, the first thing I would do is confirm the iptables or other firewall configuration is set up to block traffic on that port.  Then, I would want to set up a development environment to clone the environment where this vulnerability exists.  I would investigate recent git logs to track down any unintentional vulnerability introcutions in order to confirm reproduction of the vulnerability.  Once tracked down I would commit any found patches to a development branch and issue a pull request to be reviewed before merging into the production environment.
+
 ### Question 2
 
 A user on a RHEL based machine runs `rpm -i packagename.rpm`. Describe what happens during the lifecycle of this command.
 
-It has been a while since I have used a rpm based distribution, but I used to run Fedora (`yum`) on my laptop while an undergraduate student.  The `rpm` command is the package manager, and is run with the `-i` flag to install the specified packege (.rpm).  When exececuted, `rpm` will source the specfile for build, install and clean instructions with triggers for four sequences:
-
-1. The `%pre` hook - preinstallation, looks for any package dependencies and mark them for installation and then copy build files to the buildroot for installation
-2. The `%post` hook - postinstallation, removes any buildroot files and older version candidates after package installation
-3. The `%preun`  hook - preuninstallation, remove files not overwritten by the installation and execute uninstallations of obsolete dependencies
-4. The `%postun` hook - postuninstallation, clean-up and maintenaince  post uninstall of old packages
+> It has been a while since I have used a rpm based distribution, but I used to run Fedora (`yum`) on my laptop while an undergraduate student.  The `rpm` command is the package manager, and is run with the `-i` flag to install the specified packege (.rpm).  When exececuted, `rpm` will source the specfile for build, install and clean instructions with triggers for four sequences:
+>
+> 1. The `%pre` hook - preinstallation, looks for any package dependencies and mark them for installation and then copy build files to the buildroot for installation
+> 2. The `%post` hook - postinstallation, removes any buildroot files and older version candidates after package installation
+> 3. The `%preun`  hook - preuninstallation, remove files not overwritten by the installation and execute uninstallations of obsolete dependencies
+> 4. The `%postun` hook - postuninstallation, clean-up and maintenaince  post uninstall of old packages
 
 ### Question 3
 
