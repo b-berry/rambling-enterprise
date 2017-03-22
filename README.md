@@ -4,7 +4,7 @@ We receive an email about a security vulnerability in one of the libraries that 
 
 You are assigned to handle this report. How would you clear this from your queue?
 
-> If this vulnerability involves unauthorized port traffic, the first thing I would do is confirm the iptables or other firewall configuration is set up to block traffic on that port.  Then, I would want to set up a development environment to clone the environment where this vulnerability exists.  I would investigate recent git logs to track down any unintentional vulnerability introcutions in order to confirm reproduction of the vulnerability.  Once tracked down I would commit any found patches to a development branch and issue a pull request to be reviewed before merging into the production environment.
+> If this vulnerability involves unauthorized port traffic, the first thing I would do is confirm the iptables or other firewall configuration is set up to block traffic on that port.  Then, I would want to set up a development environment to clone the environment where this vulnerability exists.  I would investigate recent git logs to track down any unintentional vulnerability introductions in order to confirm reproduction of the vulnerability.  Once tracked down I would commit any found patches to a development branch and issue a pull request to be reviewed before merging into the production environment.
 
 ### Question 2
 
