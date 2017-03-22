@@ -23,7 +23,11 @@ After shipping a new feature in the project, a large customer reports back that 
 
 How do you approach this situation and how do you rule out the issues you may find on the way to a resolution?
 
+> If this new feature is deployed by Chef, my first suspicion would be an enviroment revision incompatibility.  I would investigate what environment the customer's system is running.  Then, I would check the cookbook version bump this new feature created and confirm that this environment is configured to deploy that version.  If I find that the deployed environement is properly configured to use this new feature revision I would investigate `chef-client` logs to see if any deployment issues occured during the chef-run.  I should then be able to follow the stacktrace error to get more information about the failure.  I would then troubleshot any recipe issues on a development branch of the Chef repo.
+
 What do you do once the issue is solved?
+
+> Once I have determined a working patch to the cookbook deployment on my development branch, I would create a pull request to merge that patch into the production branch and if necessary bump the appropriate cookbook version for future deployment.  
 
 ### Question 4
 
@@ -87,5 +91,5 @@ Can you describe your Chef experience?
 Do you have an open source project that you own or contributed to that you feel particularly proud about?
 
 > As a content developer on the Liquid Galaxy project, I've contrubuted to a Ruby Gem created in-house to automate KML source content for our interactive plateform.  This library calculates the necessary geospatial relationships to create geosyncronous drawn polygons and/or flight dynamics intended for Google Earth and other geodatic virtual tours. 
-
+>
 > [Kamelopard Ruby Gem](https://rubygems.org/gems/kamelopard/versions/0.0.16 "Ruby Gems Kamelopard Page")
