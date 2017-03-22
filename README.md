@@ -10,10 +10,10 @@ A user on a RHEL based machine runs `rpm -i packagename.rpm`. Describe what happ
 
 It has been a while since I have used a rpm based distribution, but I used to run Fedora (`yum`) on my laptop while an undergraduate student.  The `rpm` command is the package manager, and is run with the `-i` flag to install the specified packege (.rpm).  When exececuted, `rpm` will source the specfile for build, install and clean instructions with triggers for four sequences:
 
-1 - The `%pre` hook - preinstallation, looks for any package dependencies and mark them for installation and then copy build files to the buildroot for installation
-2 - The `%post` hook - postinstallation, removes any buildroot files and older version candidates after package installation
-3 - The `%preun`  hook - preuninstallation, remove files not overwritten by the installation and execute uninstallations of obsolete dependencies
-4 - The `%postun` hook - postuninstallation, clean-up and maintenaince  post uninstall of old packages
+1. The `%pre` hook - preinstallation, looks for any package dependencies and mark them for installation and then copy build files to the buildroot for installation
+2. The `%post` hook - postinstallation, removes any buildroot files and older version candidates after package installation
+3. The `%preun`  hook - preuninstallation, remove files not overwritten by the installation and execute uninstallations of obsolete dependencies
+4. The `%postun` hook - postuninstallation, clean-up and maintenaince  post uninstall of old packages
 
 ### Question 3
 
