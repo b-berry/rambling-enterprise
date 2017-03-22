@@ -92,4 +92,5 @@ Do you have an open source project that you own or contributed to that you feel 
 
 > As a content developer on the Liquid Galaxy project, I've contributed to a Ruby Gem created in-house to automate KML source content for our interactive platform.  This library calculates the necessary geospatial relationships to create geosynchronous content, typically drawn shape polygons and/or flight dynamics intended for Google Earth and other geodatic virtual tours. 
 >
+> [Liquid Galaxy](https://liquidgalaxy.endpoint.com "Liquid Galaxy by End Point Homepage")
 > [Kamelopard Ruby Gem](https://rubygems.org/gems/kamelopard/versions/0.0.16 "Ruby Gems Kamelopard Page")
