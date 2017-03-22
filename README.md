@@ -8,6 +8,13 @@ You are assigned to handle this report. How would you clear this from your queue
 
 A user on a RHEL based machine runs `rpm -i packagename.rpm`. Describe what happens during the lifecycle of this command.
 
+It has been a while since I have used a rpm based distribution, but I used to run Fedora (`yum`) on my laptop while an undergraduate student.  The `rpm` command is the package manager, and is run with the `-i` flag to install the specified packege (.rpm).  When exececuted, `rpm` will source the specfile for build, install and clean instructions with triggers for four sequences:
+
+1 - The `%pre` hook - preinstallation, looks for any package dependencies and mark them for installation and then copy build files to the buildroot for installation
+2 - The `%post` hook - postinstallation, removes any buildroot files and older version candidates after package installation
+3 - The `%preun`  hook - preuninstallation, remove files not overwritten by the installation and execute uninstallations of obsolete dependencies
+4 - The `%postun` hook - postuninstallation, clean-up and maintenaince  post uninstall of old packages
+
 ### Question 3
 
 After shipping a new feature in the project, a large customer reports back that they could not upgrade.
@@ -73,7 +80,7 @@ I have been 100% remote in my current role of Linux Engineer and Content Develop
 
 Can you describe your Chef experience?
 
-I have almost 5 years of experience configuring Chef nodes, cookbooks, and encrypted databags using a privately provisioned Chef-server.  I have experience troubleshooting Chef client issues on remote servers, deployment of bumped cookbooks and modified environments and performing these functions always under revision tracking with Git.  My changes to a local checkout are pushed to the remote origin and are passed through a Jenkins CI pipeline before being deployed to a live system.
+I have almost 5 years of experience configuring Chef nodes, cookbooks, and encrypted databags using a privately provisioned Chef-server.  I have experience troubleshooting Chef client issues on remote servers, deployment of bumped cookbooks and modified environments and performing these tasks always under revision tracking with Git.  My changes to a local checkout are pushed to the remote origin and are passed through a Jenkins CI pipeline before being deployed to a live system.
 
 Do you have an open source project that you own or contributed to that you feel particularly proud about?
 
