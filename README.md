@@ -76,14 +76,14 @@ $ ./getHttpTime.rb -d 300 -i 12 -u https://gitlab.com
 
 Do you have remote working experience?
 
-I have been 100% remote in my current role of Linux Engineer and Content Developer for the Liquid Galaxy project for a small tech firm based out of New York, NY for more than two years of my 4+ years in this role.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in dialy stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
+> I have been 100% remote in my current role of Linux Engineer and Content Developer for the Liquid Galaxy project for a small tech firm based out of New York, NY for more than two years of my 4+ years in this role.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in dialy stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
 
 Can you describe your Chef experience?
 
-I have almost 5 years of experience configuring Chef nodes, cookbooks, and encrypted databags using a privately provisioned Chef-server.  I have experience troubleshooting Chef client issues on remote servers, deployment of bumped cookbooks and modified environments and performing these tasks always under revision tracking with Git.  My changes to a local checkout are pushed to the remote origin and are passed through a Jenkins CI pipeline before being deployed to a live system.
+> I have almost 5 years of experience configuring Chef nodes, cookbooks, and encrypted databags using a privately provisioned Chef-server.  I have experience troubleshooting Chef client issues on remote servers, deployment of bumped cookbooks and modified environments and performing these tasks always under revision tracking with Git.  My changes to a local checkout are pushed to the remote origin and are passed through a Jenkins CI pipeline before being deployed to a live system.
 
 Do you have an open source project that you own or contributed to that you feel particularly proud about?
 
-As a content developer on the Liquid Galaxy project, I've contrubuted to a Ruby Gem created in-house to automate KML source content for our interactive plateform.  This library calculates the necessary geospatial relationships to create geosyncronous drawn polygons and/or flight dynamics intended for Google Earth and other geodatic virtual tours. 
+> As a content developer on the Liquid Galaxy project, I've contrubuted to a Ruby Gem created in-house to automate KML source content for our interactive plateform.  This library calculates the necessary geospatial relationships to create geosyncronous drawn polygons and/or flight dynamics intended for Google Earth and other geodatic virtual tours. 
 
-[Kamelopard Ruby Gem](https://rubygems.org/gems/kamelopard/versions/0.0.16 "Ruby Gems Kamelopard Page")
+> [Kamelopard Ruby Gem](https://rubygems.org/gems/kamelopard/versions/0.0.16 "Ruby Gems Kamelopard Page")
