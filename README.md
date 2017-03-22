@@ -78,7 +78,7 @@ $ ./getHttpTime.rb -d 300 -i 12 -u https://gitlab.com
 
 Do you have remote working experience?
 
-> I have been 100% remote in my current role of Linux Engineer and Content Developer for the Liquid Galaxy project for a small tech firm based out of New York, NY for more than two years of my 4+ years in this role.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in dialy stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
+> I have been 100% remote for more than two years of my 5 years as a Linux Engineer and Content Developer for the Liquid Galaxy project for a small tech firm based out of New York, NY.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in dialy stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
 
 Can you describe your Chef experience?
 
