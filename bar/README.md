@@ -30,7 +30,7 @@
 - In Puppet how do you define dependencies between resources?
 
 
-#AWS
+# AWS
 - What is an AMI?
 - What is the value of having multiple EC2 instance types?
 - What is an EC2 ‘Reserved Instance’?
