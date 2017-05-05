@@ -89,5 +89,76 @@ For the following problems, please consider the efficiency and complexity of you
 ```
 - Given an ordered list such as `[1, 2, 3, 5]` find any pair of numbers that sum to 8.
   - Run your above solution with the list `[1,2,4,4]`
-    
+    ```ruby
+      1 #!/usr/bin/env ruby
+      2 
+      3 require 'pry'
+      4 
+      5 List = [1,2,4,4]
+      6 SumTest = 8
+      7 
+      8 results = []
+      9 
+     10 # Run through parent List
+     11 List.each_with_index do |item,index|
+     12     (0..List.length).step(1) do |n|
+     13         # Skip if self
+     14         next if n == index
+     15         sum = item.to_i + List[n].to_i
+     16         if sum == SumTest 
+     17             # Store results
+     18             results << { :int1 => item,
+     19                          :loc1 => index,
+     20                          :int2 => List[n],
+     21                          :loc2 => n,
+     22                          :sum => sum
+     23                         }
+     24         end
+     25     end
+     26 end 
+     27 
+     28 puts results
+    ```   
+    returns:
+    ```bash
+    $ ruby coding_3a.rb 
+    {:int1=>4, :loc1=>2, :int2=>4, :loc2=>3, :sum=>8}
+    {:int1=>4, :loc1=>3, :int2=>4, :loc2=>2, :sum=>8}
+    ```
   - Bonus: find a pair of values that sum to 8 in an *unordered* list such as `[5, 4, 1,3]`
+    ```ruby
+      1 #!/usr/bin/env ruby
+      2 
+      3 require 'pry'
+      4 
+      5 List = [5, 4, 1,3]
+      6 SumTest = 8
+      7 
+      8 results = []
+      9 
+     10 # Run through parent List
+     11 List.each_with_index do |item,index|
+     12     (0..List.length).step(1) do |n|
+     13         # Skip if self
+     14         next if n == index
+     15         sum = item.to_i + List[n].to_i
+     16         if sum == SumTest
+     17             # Store results
+     18             results << { :int1 => item,
+     19                          :loc1 => index,
+     20                          :int2 => List[n],
+     21                          :loc2 => n,
+     22                          :sum => sum
+     23                         }
+     24         end
+     25     end
+     26 end
+     27 
+     28 puts results
+    ```
+    returns:
+    ```bash
+    $ ruby coding_3b.rb 
+    {:int1=>5, :loc1=>0, :int2=>3, :loc2=>3, :sum=>8}
+    {:int1=>3, :loc1=>3, :int2=>5, :loc2=>0, :sum=>8}
+    ```
