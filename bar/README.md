@@ -1,9 +1,22 @@
 # Linux
 - How do you get the exit status of the last command that was run in a Linux bash shell.
+```bash
+$ echo $?
+```
 - What is the difference between a copy, hard link and a soft link?
+> `cp` - Will create a copy of the source file with a new inode
+> `ln` - Will create a hard link, which links to the source file's inode
+> 'ln -s' - Will create a soft link, which references the source file's filename
+
 - What is an ‘inode’? How do you find the inode for `/etc/passwd`?
+> An inode stores attributes for a file on the filesystem as well the block location.
+> `ls -i /etc/passwd` will show the inode location for this file
+
 - What information can be found within the /proc filesystem.
+> `/proc` contains runtime system information such as system memory, mounted devices, and modules
+
 - There is a process running on tcp port 1234. How do you identify which process it is?
+> `lsof -i :1234` would show me the process running on port 1234.
 
 
 # Jenkins
