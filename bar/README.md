@@ -4,23 +4,24 @@
 $ echo $?
 ```
 - What is the difference between a copy, hard link and a soft link?
-> `cp` - Will create a copy of the source file with a new inode
-> `ln` - Will create a hard link, which links to the source file's inode
-> `ln -s` - Will create a soft link, which references the source file's filename
+  - `cp` - Will create a copy of the source file with a new inode
+  - `ln` - Will create a hard link, which links to the source file's inode
+  - `ln -s` - Will create a soft link, which references the source file's filename
 
 - What is an ‘inode’? How do you find the inode for `/etc/passwd`?
-> An inode stores attributes for a file on the filesystem as well the block location.
-> `ls -i /etc/passwd` will show the inode location for this file
+  - An inode stores attributes for a file on the filesystem as well the block location.
+  - `ls -i /etc/passwd` will show the inode location for this file
 
 - What information can be found within the /proc filesystem.
-> `/proc` contains runtime system information such as system memory, mounted devices, and modules
+  - `/proc` contains runtime system information such as system memory, mounted devices, and modules
 
 - There is a process running on tcp port 1234. How do you identify which process it is?
-> `lsof -i :1234` would show me the process running on port 1234.
+  -  `lsof -i :1234` would show me the process running on port 1234.
 
 
 # Jenkins
 - What is the primary use case for using a Jenkins ‘matrix’ job?
+> As discussed in my phone call with Dominic, I am a daily consumer of Jenkins CI.  That said, I have not been responsible for configuring Jenkins.  My interaction is as such: When I need to push an update to our Chef configuration, I commit my changes and push to origin master branch.  Then, I log into our Jenkins interface, find my deployment test job, and confirm that my commit is being tested and passes.
 - Name two to three CI systems and tell us the pros and cons of each, with a bias towards personal experiences.
 - Identify a few key benefits of using Jenkins Job DSL (or similar technology) to define jobs vs using the GUI for configuration
 - Bonus questions:
@@ -30,21 +31,29 @@ $ echo $?
 
 # Networking
 - What is an arp table?
+> An arp table (Address Resolution Protocall) is the system's cache of network addresses.  The arp table stores editable IPv4 address information.
 - What is DNS?
+> The Domain Name System is an internet naming system that associates domain names with IP addresses.
 - You know a server is up and normally responds to pings, what are some reasons why you can no longer ping it?
+> DNS resolution could be down, and/or a network switch in the route from my machine to the server I'm trying to reach could be down.
 - How can you discover what ports are listening on a server?
+> I would utilize `nmap` to get a scan report of the server.  If I have access to the server, I could also run `lsof -i` to list open network files.
 - Describe how you would troubleshoot networking problems including the tools you would use
 
 
 # Puppet
 - Identify a few key benefits of using configuration management tools, such as Puppet.
+> My experience with configuration managment is withint Chef.  I currently work with a privately configured chef-server to write cookbooks and recipes to deploy version controled software packages and custom system configuration.  One real benefit is controlling software versioning by setting environment deployment caps so that I can safetly deploy production ready repository tags to production systems and in reduce accidental version bums, where non-production ready code gets deployed to production systems.
 - Name some common resource types in Puppet.
+> Again my experience here lies in Chef, where we have `node-definitions` for custom override configurations per host, `cookbooks` to deploy suites of software packages, `recipies` that dictate the installation proceedure of individual packages.  These deployent configs are packaged and defined through setting `role` configurations and version controlled through `enviroment` parameters.
 - In Puppet how do you make sure a certain version of a package is installed?
+> While I don't have specific experience with Puppet, I am very flexible and eager to learn new software suites and methods of configuration management.
 - In Puppet how do you define dependencies between resources?
 
 
 # AWS
 - What is an AMI?
+> At this point in time I don't have AWS experience, but again, I would welcome and in fact look forward to learning about provisioning AWS services into my daily infastructure.
 - What is the value of having multiple EC2 instance types?
 - What is an EC2 ‘Reserved Instance’?
 - What is the primary difference between an EC2 ‘Reserved’ and ‘On-Demand’ instances?
