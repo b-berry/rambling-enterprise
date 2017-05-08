@@ -1,6 +1,6 @@
 # Linux
 - How do you get the exit status of the last command that was run in a Linux bash shell.
-  - ```bash
+```bash
 $ echo $?
 ```
 - What is the difference between a copy, hard link and a soft link?
