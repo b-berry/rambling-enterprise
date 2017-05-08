@@ -22,7 +22,7 @@
 
 # Jenkins
 - What is the primary use case for using a Jenkins ‘matrix’ job?
-> As discussed in my phone call with Dominic, I am a daily consumer of Jenkins CI.  That said, I have not been responsible for configuring Jenkins.  My interaction is as such: When I need to push an update to our Chef configurations, I commit my changes and push to origin master branch.  Then, I log into our Jenkins interface, find my deployment test job, and confirm that my commit is being tested and passes.
+> As discussed in my phone call with Dominic, I am a daily consumer of Jenkins CI.  That said, I have not been responsible for configuring Jenkins.  My interaction is as such: When I need to push an update to our Chef configurations, I commit my changes and push to origin master branch.  Then, I log into our Jenkins interface, find my deployment test job, and confirm that my commit is qued for testing and passes testing for deployment.
 - Name two to three CI systems and tell us the pros and cons of each, with a bias towards personal experiences.
 - Identify a few key benefits of using Jenkins Job DSL (or similar technology) to define jobs vs using the GUI for configuration
 - Bonus questions:
@@ -45,7 +45,7 @@
   - I would employ `traceroute` to follow the various network switches from my machine to the host in question.
   - If I suspect DNS issues, I would use `dig` or `nslookup` to see domain name resolution to IP addresses configuration
   - Once I have IP address resolution, I can test connectivity directly to these IPs via `ping` to confirm DNS issues
-  - If I have root access on the server in question, I would want to check `iptables` or other firewall config for :80 :443 open if using http/https respectively
+  - If I have root access on the server in question, I would want to check `iptables` or other firewall config for `:80 && :443` open if using http and https respectively
     - I would also then check `dnsmasq` service on the host if applicable, restart to clear dns cache
 
 # Puppet
