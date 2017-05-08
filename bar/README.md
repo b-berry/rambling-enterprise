@@ -21,7 +21,7 @@ $ echo $?
 
 # Jenkins
 - What is the primary use case for using a Jenkins ‘matrix’ job?
-> As discussed in my phone call with Dominic, I am a daily consumer of Jenkins CI.  That said, I have not been responsible for configuring Jenkins.  My interaction is as such: When I need to push an update to our Chef configuration, I commit my changes and push to origin master branch.  Then, I log into our Jenkins interface, find my deployment test job, and confirm that my commit is being tested and passes.
+> As discussed in my phone call with Dominic, I am a daily consumer of Jenkins CI.  That said, I have not been responsible for configuring Jenkins.  My interaction is as such: When I need to push an update to our Chef configurations, I commit my changes and push to origin master branch.  Then, I log into our Jenkins interface, find my deployment test job, and confirm that my commit is being tested and passes.
 - Name two to three CI systems and tell us the pros and cons of each, with a bias towards personal experiences.
 - Identify a few key benefits of using Jenkins Job DSL (or similar technology) to define jobs vs using the GUI for configuration
 - Bonus questions:
@@ -39,13 +39,19 @@ $ echo $?
 - How can you discover what ports are listening on a server?
 > I would utilize `nmap` to get a scan report of the server.  If I have access to the server, I could also run `lsof -i` to list open network files.
 - Describe how you would troubleshoot networking problems including the tools you would use
-
+  - My first test would be basic packet loss evaluation using `ping` over the domain name or IP address
+    - If the domain name doesnt resolve, I would check `/etc/hosts` if it is a locally defined host and run again over the configured IP
+  - I would employ `traceroute` to follow the various network switches from my machine to the host in question.
+  - If I suspect DNS issues, I would use `dig` or `nslookup` to see domain name resolution to IP addresses configuration
+  - Once I have IP address resolution, I can test connectivity directly to these IPs via `ping` to confirm DNS issues
+  - If I have root access on the server in question, I would want to check `iptables` or other firewall config for :80 :443 open if using http/https respectively
+    - I would also then check `dnsmasq` service on the host if applicable, restart to clear dns cache
 
 # Puppet
 - Identify a few key benefits of using configuration management tools, such as Puppet.
-> My experience with configuration managment is withint Chef.  I currently work with a privately configured chef-server to write cookbooks and recipes to deploy version controled software packages and custom system configuration.  One real benefit is controlling software versioning by setting environment deployment caps so that I can safetly deploy production ready repository tags to production systems and in reduce accidental version bums, where non-production ready code gets deployed to production systems.
+> My experience with configuration management is within Chef.  I currently work with a privately configured chef-server to write cookbooks and recipes to deploy version controlled software packages and custom system configuration.  One real benefit is controlling software versioning by setting environment deployment caps so that I can safely deploy production ready repository tags to production systems and reduce accidental version bums, where non-production ready code revisions are deployed to production systems.
 - Name some common resource types in Puppet.
-> Again my experience here lies in Chef, where we have `node-definitions` for custom override configurations per host, `cookbooks` to deploy suites of software packages, `recipies` that dictate the installation proceedure of individual packages.  These deployent configs are packaged and defined through setting `role` configurations and version controlled through `enviroment` parameters.
+> Again my experience here lies in Chef, where we have `node-definitions` for custom override configurations per host, `cookbooks` to deploy suites of software packages, `recipies` that dictate the installation procedure of individual packages.  These deployment configs are packaged and defined through setting `role` configurations and version controlled through `enviroment` parameters.
 - In Puppet how do you make sure a certain version of a package is installed?
 > While I don't have specific experience with Puppet, I am very flexible and eager to learn new software suites and methods of configuration management.
 - In Puppet how do you define dependencies between resources?
