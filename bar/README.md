@@ -1,8 +1,9 @@
 # Linux
 - How do you get the exit status of the last command that was run in a Linux bash shell.
-```bash
-$ echo $?
-```
+  - I'd query the exit status variable after the command completes:
+  ```bash
+  $ echo $?
+  ```
 - What is the difference between a copy, hard link and a soft link?
   - `cp` - Will create a copy of the source file with a new inode
   - `ln` - Will create a hard link, which links to the source file's inode
