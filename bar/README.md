@@ -134,7 +134,7 @@ For the following problems, please consider the efficiency and complexity of you
      27 
      28 puts results
     ```   
-    returns:
+  - returns:
     ```bash
     $ ruby coding_3a.rb 
     {:int1=>4, :loc1=>2, :int2=>4, :loc2=>3, :sum=>8}
@@ -171,7 +171,7 @@ For the following problems, please consider the efficiency and complexity of you
      27 
      28 puts results
     ```
-    returns:
+  - returns:
     ```bash
     $ ruby coding_3b.rb 
     {:int1=>5, :loc1=>0, :int2=>3, :loc2=>3, :sum=>8}
