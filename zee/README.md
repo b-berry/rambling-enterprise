@@ -26,8 +26,12 @@ Specific options:
 Snippit of [results](getHttpTime.results):
 
 ```bash
+$ ./getHttpTime.rb -u gitlab.com > getHttpTime.results
+```
+
+```bash
 $ head getHttpTime.results 
-#<OpenStruct encoding="utf8", dur=300, int=5, url="github.com">
+#<OpenStruct encoding="utf8", dur=300, int=5, url="gitlab.com">
   Running HTTP::Get response test for -            Duration:300s Every:5s
   # -                      Time - ### -  Response message -  Request Time
   1 - 2018-01-09 13:13:43 -0800 - 200 -                OK - 0.21318816900
