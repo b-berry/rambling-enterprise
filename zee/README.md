@@ -61,7 +61,7 @@ $ head getHttpTime.results
 
 ## QQ2: Are there any other languages you have significant experience in?
 
-> I am very confortable in the Bash environment as well as Python scripting.  I am often writing [tools](https://github.com/b-berry/b-berry-bin) to automate and/or fascilitate everyday tasks on my workstation.  If I have to do something more than 7 times, I would prefer to start automating sucn an activity.
+> I am very confortable in the Bash environment as well as Python scripting.  I am often writing [tools](https://github.com/b-berry/b-berry-bin) to automate and/or fascilitate everyday tasks on my workstation.  If I have to do something more than 7 times, I would prefer to start automating such an activity.
 
 ## QQ3: Can you describe your Chef and packaging experience?
 
