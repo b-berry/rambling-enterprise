@@ -57,7 +57,7 @@ $ head getHttpTime.results
 
 ## QQ1: Do you have remote working experience?
 
-> I have been 100% remote for 2.5 of my 5 years as a Linux Engineer and Content Developer for the Liquid Galaxy project for a small tech firm based out of New York, NY.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in daily stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
+> I have been 100% remote for 2.5 of my 5 years as a Linux Engineer and Content Developer for the [Liquid Galaxy](https://liquidgalaxy.endpoint.com)  project for a small tech firm based out of New York, NY.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in daily stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
 
 ## QQ2: Are there any other languages you have significant experience in?
 
