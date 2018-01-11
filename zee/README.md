@@ -4,7 +4,7 @@ What is the difference between pod and deployment in Kubernetes?
 # Question 2
 A user on a RHEL based machine runs `rpm -i packagename.rpm`. Describe what happens during the lifecycle of this command.
 
-> It has been a while since I have consistenty ran a rpm based distribution, but I used to run Fedora in university computational mathematics labs on my laptop while an undergraduate student.  
+> It has been a while since I have consistenty ran a rpm based distribution, but I used to run Fedora in university computational mathematics labs and on my laptop while an undergraduate student.  
 > The `rpm` command is the package manager, and is run with the `-i` flag to install the specified packege (.rpm).  When executed, `rpm` will source the specfile for build, install and clean instructions with triggers for four sequences:
 >
 > 1. The `%pre` hook - preinstallation, looks for any package dependencies and mark them for installation and then copy build files to the buildroot for installation
