@@ -1,6 +1,8 @@
 # Question 1
 What is the difference between pod and deployment in Kubernetes?
 
+> I haven't yet worked with Kubernets, but I have some experience working with Docker containers and deployment in my current role, as well as in this personal [CartoDB](https://github.com/b-berry/docker-cartodb1) project to containerize a private [Carto](https://carto.com) server and Post{Gres,GIS} database services.
+
 # Question 2
 A user on a RHEL based machine runs `rpm -i packagename.rpm`. Describe what happens during the lifecycle of this command.
 
