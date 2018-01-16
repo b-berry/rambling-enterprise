@@ -59,11 +59,11 @@ $ head getHttpTime.results
 
 ## QQ1: Do you have remote working experience?
 
-> I have been 100% remote for 2.5 of my 5 years as a Linux Engineer and Content Developer for the [Liquid Galaxy](https://liquidgalaxy.endpoint.com)  project for a small tech firm based out of New York, NY.  In that time, I have found the remote office setting to be extremely productive and rewarding.  I participate in daily stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
+> I have been 100% remote for the last 2.5 of my 5 years as a Linux Engineer and Content Developer for the [Liquid Galaxy](https://liquidgalaxy.endpoint.com)  project at a small tech firm based out of New York, NY.  In that time, I have found this type of intentionality in the work-space environment to be extremely productive and rewarding.  Currently, I participate in daily stand-up meetings and extended weekly team project meetings.  We also coordinate through Zulip chat, Trello and Github issue tracking.
 
 ## QQ2: Are there any other languages you have significant experience in?
 
-> I am very confortable in the Bash environment as well as Python scripting.  I am often writing [tools](https://github.com/b-berry/b-berry-bin) to automate and/or fascilitate everyday tasks on my workstation.  If I have to do something more than 7 times, I would prefer to start automating such an activity.
+> I am very confortable in the Bash environment as well as Python scripting.  I am often writing diverse [tools](https://github.com/b-berry/b-berry-bin) to automate and/or fascilitate everyday tasks on my workstation.  If I have to do something more than 7 times, I would prefer to start automating such an activity.  As a daily Chef user, I'm also very conformtable within the Ruby environment as well.
 
 ## QQ3: Can you describe your Chef and packaging experience?
 
