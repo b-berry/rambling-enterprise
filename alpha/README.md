@@ -25,6 +25,17 @@
 [1, 3]       => input[1] = 5, input[3] = 10, sum = 15
 ```
 
+#### My runtime results:
+
+```
+$ python find_sums.py 15 5 5 15 10
+Target Sum: 15 from List: [[5, 5, 15, 10]]
+Found set: (15,) Sum: 15
+Found set: (5, 10) Sum: 15
+Found set: (5, 10) Sum: 15
+Results: [[(15,), 15], [(5, 10), 15], [(5, 10), 15]]
+```
+
 ## EXAMPLE 2:
 
 `total_combinations = calculate_combinations(input=[1, 2, 3, 4], target_sum=6)`
@@ -39,6 +50,16 @@
 [1, 3]
 ```
  
+#### My runtime results:
+
+```
+$ python find_sums.py 6 1 2 3 4
+Target Sum: 6 from List: [[1, 2, 3, 4]]
+Found set: (2, 4) Sum: 6
+Found set: (1, 2, 3) Sum: 6
+Results: [[(2, 4), 6], [(1, 2, 3), 6]]
+
+```
 
 ### BONUS Points
 
