@@ -35,6 +35,8 @@ Found set: (5, 10) Sum: 15
 Found set: (5, 10) Sum: 15
 Results: [[(15,), 15], [(5, 10), 15], [(5, 10), 15]]
 ```
+source: [find_sums.py](find_sums.py)
+
 
 ## EXAMPLE 2:
 
@@ -59,6 +61,7 @@ Found set: (2, 4) Sum: 6
 Found set: (1, 2, 3) Sum: 6
 Results: [[(2, 4), 6], [(1, 2, 3), 6]]
 ```
+source: [find_sums.py](find_sums.py)
 
 ### BONUS Points
 
