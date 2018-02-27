@@ -66,3 +66,5 @@ source: [find_sums.py](find_sums.py)
 ### BONUS Points
 
 > How would you extend it to deal with a varying length input array?
+
+Note: At the time of this push, the main limit to scaling this functionality lies within the argparse.nargs configuration.
